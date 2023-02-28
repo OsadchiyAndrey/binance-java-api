@@ -55,7 +55,7 @@ There are three main client classes that can be used to interact with the API:
 These can be instantiated through the corresponding factory method of [`BinanceApiClientFactory`](https://github.com/joaopsilva/binance-java-api/blob/master/src/main/java/com/binance/api/client/BinanceApiClientFactory.java), by passing the [security parameters](https://www.binance.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.binance.com/userCenter/createApi.html](https://www.binance.com/userCenter/createApi.html).
 
 ```java
-BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance("API-KEY", "SECRET");
+BinanceApiClientFactory factory = BinanceApiClientFactory.getInstance("YOUR_API_KEY", "YOUR_SECRET", false);
 BinanceApiRestClient client = factory.newRestClient();
 ```
 

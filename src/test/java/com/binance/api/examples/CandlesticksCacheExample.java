@@ -1,10 +1,10 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.BinanceApiRestClient;
-import com.binance.api.client.BinanceApiWebSocketClient;
-import com.binance.api.client.domain.market.Candlestick;
-import com.binance.api.client.domain.market.CandlestickInterval;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.BinanceApiRestClient;
+import com.osa.binance.api.client.BinanceApiWebSocketClient;
+import com.osa.binance.api.client.domain.market.Candlestick;
+import com.osa.binance.api.client.domain.market.CandlestickInterval;
 
 import java.util.List;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class CandlesticksCacheExample {
    * Initializes the candlestick cache by using the REST API.
    */
   private void initializeCandlestickCache(String symbol, CandlestickInterval interval) {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
+    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
     BinanceApiRestClient client = factory.newRestClient();
     List<Candlestick> candlestickBars = client.getCandlestickBars(symbol.toUpperCase(), interval);
 
@@ -43,7 +43,7 @@ public class CandlesticksCacheExample {
    * Begins streaming of depth events.
    */
   private void startCandlestickEventStreaming(String symbol, CandlestickInterval interval) {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
+    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
     BinanceApiWebSocketClient client = factory.newWebSocketClient();
 
     client.onCandlestickEvent(symbol.toLowerCase(), interval, response -> {

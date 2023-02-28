@@ -1,12 +1,12 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiCallback;
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.BinanceApiRestClient;
-import com.binance.api.client.BinanceApiWebSocketClient;
-import com.binance.api.client.domain.event.DepthEvent;
-import com.binance.api.client.domain.market.OrderBook;
-import com.binance.api.client.domain.market.OrderBookEntry;
+import com.osa.binance.api.client.BinanceApiCallback;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.BinanceApiRestClient;
+import com.osa.binance.api.client.BinanceApiWebSocketClient;
+import com.osa.binance.api.client.domain.event.DepthEvent;
+import com.osa.binance.api.client.domain.market.OrderBook;
+import com.osa.binance.api.client.domain.market.OrderBookEntry;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class DepthCacheExample {
   public DepthCacheExample(String symbol) {
     this.symbol = symbol;
 
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
+    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
     this.wsClient = factory.newWebSocketClient();
     this.restClient = factory.newRestClient();
 

@@ -1,6 +1,6 @@
 package com.binance.api.domain.event;
 
-import com.binance.api.client.domain.event.CandlestickEvent;
+import com.osa.binance.api.client.domain.event.CandlestickEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 

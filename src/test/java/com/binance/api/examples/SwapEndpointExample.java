@@ -1,8 +1,12 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.BinanceApiSwapRestClient;
-import com.binance.api.client.domain.account.*;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.BinanceApiSwapRestClient;
+import com.osa.binance.api.client.domain.account.Liquidity;
+import com.osa.binance.api.client.domain.account.Pool;
+import com.osa.binance.api.client.domain.account.SwapHistory;
+import com.osa.binance.api.client.domain.account.SwapQuote;
+import com.osa.binance.api.client.domain.account.SwapRecord;
 
 import java.util.List;
 
@@ -13,7 +17,7 @@ public class SwapEndpointExample {
 
     public static void main(String[] args) {
 
-        BinanceApiClientFactory binanceApiClientFactory = BinanceApiClientFactory.newInstance(API_KEY, SECRET_KEY);
+        BinanceApiClientFactory binanceApiClientFactory = BinanceApiClientFactory.getInstance(API_KEY, SECRET_KEY, false);
         BinanceApiSwapRestClient swapClient = binanceApiClientFactory.newSwapRestClient();
         List<Pool> pools = swapClient.listAllSwapPools();
         for(Pool pool:pools) {

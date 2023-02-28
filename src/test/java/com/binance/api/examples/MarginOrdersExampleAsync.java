@@ -1,13 +1,13 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiAsyncMarginRestClient;
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.domain.TimeInForce;
-import com.binance.api.client.domain.account.request.CancelOrderRequest;
-import com.binance.api.client.domain.account.request.OrderRequest;
-import com.binance.api.client.domain.account.request.OrderStatusRequest;
+import com.osa.binance.api.client.BinanceApiAsyncMarginRestClient;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.domain.TimeInForce;
+import com.osa.binance.api.client.domain.account.request.CancelOrderRequest;
+import com.osa.binance.api.client.domain.account.request.OrderRequest;
+import com.osa.binance.api.client.domain.account.request.OrderStatusRequest;
 
-import static com.binance.api.client.domain.account.MarginNewOrder.limitBuy;
+import static com.osa.binance.api.client.domain.account.MarginNewOrder.limitBuy;
 
 /**
  * Examples on how to place orders, cancel them, and query account information.
@@ -15,7 +15,7 @@ import static com.binance.api.client.domain.account.MarginNewOrder.limitBuy;
 public class MarginOrdersExampleAsync {
 
     public static void main(String[] args) {
-        BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance("YOUR_API_KEY", "YOUR_SECRET");
+        BinanceApiClientFactory factory = BinanceApiClientFactory.getInstance("YOUR_API_KEY", "YOUR_SECRET", false);
         BinanceApiAsyncMarginRestClient client = factory.newAsyncMarginRestClient();
 
         // Getting list of open orders

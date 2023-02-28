@@ -1,14 +1,14 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiAsyncRestClient;
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.domain.market.AggTrade;
-import com.binance.api.client.domain.market.Candlestick;
-import com.binance.api.client.domain.market.CandlestickInterval;
-import com.binance.api.client.domain.market.OrderBook;
-import com.binance.api.client.domain.market.TickerPrice;
-import com.binance.api.client.domain.market.TickerStatistics;
-import com.binance.api.client.exception.BinanceApiException;
+import com.osa.binance.api.client.BinanceApiAsyncRestClient;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.domain.market.AggTrade;
+import com.osa.binance.api.client.domain.market.Candlestick;
+import com.osa.binance.api.client.domain.market.CandlestickInterval;
+import com.osa.binance.api.client.domain.market.OrderBook;
+import com.osa.binance.api.client.domain.market.TickerPrice;
+import com.osa.binance.api.client.domain.market.TickerStatistics;
+import com.osa.binance.api.client.exception.BinanceApiException;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
 public class MarketDataEndpointsExampleAsync {
 
   public static void main(String[] args) {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
+    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
     BinanceApiAsyncRestClient client = factory.newAsyncRestClient();
 
     // Getting depth of a symbol (async)

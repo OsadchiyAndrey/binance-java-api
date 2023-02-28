@@ -1,12 +1,12 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.BinanceApiRestClient;
-import com.binance.api.client.domain.general.Asset;
-import com.binance.api.client.domain.general.ExchangeInfo;
-import com.binance.api.client.domain.general.FilterType;
-import com.binance.api.client.domain.general.SymbolFilter;
-import com.binance.api.client.domain.general.SymbolInfo;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.BinanceApiRestClient;
+import com.osa.binance.api.client.domain.general.Asset;
+import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.general.FilterType;
+import com.osa.binance.api.client.domain.general.SymbolFilter;
+import com.osa.binance.api.client.domain.general.SymbolInfo;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class GeneralEndpointsExample {
 
   public static void main(String[] args) {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
+    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
     BinanceApiRestClient client = factory.newRestClient();
 
     // Test connectivity

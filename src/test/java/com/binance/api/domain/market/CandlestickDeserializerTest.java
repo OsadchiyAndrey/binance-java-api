@@ -1,6 +1,6 @@
 package com.binance.api.domain.market;
 
-import com.binance.api.client.domain.market.Candlestick;
+import com.osa.binance.api.client.domain.market.Candlestick;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 package com.binance.api.domain.account;
 
-import com.binance.api.client.domain.account.Withdraw;
-import com.binance.api.client.domain.account.WithdrawHistory;
+import com.osa.binance.api.client.domain.account.Withdraw;
+import com.osa.binance.api.client.domain.account.WithdrawHistory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 

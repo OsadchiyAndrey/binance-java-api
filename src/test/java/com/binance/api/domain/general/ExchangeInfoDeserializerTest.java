@@ -1,14 +1,14 @@
 package com.binance.api.domain.general;
 
-import com.binance.api.client.domain.OrderType;
-import com.binance.api.client.domain.general.ExchangeInfo;
-import com.binance.api.client.domain.general.FilterType;
-import com.binance.api.client.domain.general.RateLimit;
-import com.binance.api.client.domain.general.RateLimitInterval;
-import com.binance.api.client.domain.general.RateLimitType;
-import com.binance.api.client.domain.general.SymbolFilter;
-import com.binance.api.client.domain.general.SymbolInfo;
-import com.binance.api.client.domain.general.SymbolStatus;
+import com.osa.binance.api.client.domain.OrderType;
+import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.general.FilterType;
+import com.osa.binance.api.client.domain.general.RateLimit;
+import com.osa.binance.api.client.domain.general.RateLimitInterval;
+import com.osa.binance.api.client.domain.general.RateLimitType;
+import com.osa.binance.api.client.domain.general.SymbolFilter;
+import com.osa.binance.api.client.domain.general.SymbolInfo;
+import com.osa.binance.api.client.domain.general.SymbolStatus;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 

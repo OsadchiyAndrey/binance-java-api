@@ -1,10 +1,8 @@
 package com.binance.api.examples;
 
-import com.binance.api.client.BinanceApiAsyncMarginRestClient;
-import com.binance.api.client.BinanceApiCallback;
-import com.binance.api.client.BinanceApiClientFactory;
-import com.binance.api.client.domain.TransferType;
-import com.binance.api.client.domain.account.MarginTransaction;
+import com.osa.binance.api.client.BinanceApiAsyncMarginRestClient;
+import com.osa.binance.api.client.BinanceApiClientFactory;
+import com.osa.binance.api.client.domain.TransferType;
 
 /**
  * Examples on how to get margin account information asynchronously.
@@ -12,7 +10,7 @@ import com.binance.api.client.domain.account.MarginTransaction;
 public class MarginAccountEndpointsExampleAsync {
 
   public static void main(String[] args) {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance("YOUR_API_KEY", "YOUR_SECRET");
+    BinanceApiClientFactory factory = BinanceApiClientFactory.getInstance("YOUR_API_KEY", "YOUR_SECRET", false);
     BinanceApiAsyncMarginRestClient client = factory.newAsyncMarginRestClient();
 
     // Get account balances
