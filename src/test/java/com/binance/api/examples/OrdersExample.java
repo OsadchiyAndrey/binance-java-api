@@ -9,7 +9,7 @@ import com.osa.binance.api.client.BinanceApiRestClient;
 public class OrdersExample {
 
   public static void main(String[] args) throws InterruptedException {
-    BinanceApiClientFactory factory = BinanceApiClientFactory.getInstance("ed68692cb967f609783720a0b47f2c7f8ef3461a6a7f3e2e73daa5c686534583", "5d7da17f75068d4d03c74b3a9f3c070aea7ce08d772c94fea94f1388815ef51a", true);
+    BinanceApiClientFactory factory = BinanceApiClientFactory.getInstance("test", "test", false);
     BinanceApiRestClient client = factory.newRestClient();
     System.out.println(client.getExchangeInfo());
 //    client.newOrder(marketBuy("BTCUSDT", "0.01"));

@@ -11,6 +11,7 @@ public class TickerEventExample {
 
     client.onBookTickerEvent("btcusdt", event -> {
       System.out.println(event);
+
     });
   }
 }

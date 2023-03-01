@@ -3,10 +3,12 @@ package com.osa.binance.api.client;
 import com.osa.binance.api.client.config.BinanceConfig;
 import com.osa.binance.api.client.impl.BinanceApiAsyncMarginRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiAsyncRestClientImpl;
+import com.osa.binance.api.client.impl.BinanceApiFuturesService;
 import com.osa.binance.api.client.impl.BinanceApiMarginRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiSwapRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiWebSocketClientImpl;
+import com.osa.binance.api.client.impl.BinanceFuturesApiRestClientImpl;
 
 import static com.osa.binance.api.client.impl.BinanceApiServiceProducer.getSharedClient;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -44,6 +46,10 @@ public class BinanceApiClientFactory {
    */
   public BinanceApiRestClient newRestClient() {
     return new BinanceApiRestClientImpl(binanceConfig);
+  }
+
+  public BinanceFuturesApiRestClient newBinanceFuturesApiRestClient() {
+    return new BinanceFuturesApiRestClientImpl(binanceConfig);
   }
 
   /**
