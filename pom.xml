@@ -6,7 +6,7 @@
 
     <groupId>org.osa</groupId>
     <artifactId>binance-api-client</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <url>https://github.com/neurallayer/binance-java-api.git</url>
 
     <name>Binance API client (Fork)</name>
