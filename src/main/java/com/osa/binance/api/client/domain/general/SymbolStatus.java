@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public enum SymbolStatus {
   PRE_TRADING,
   PENDING_TRADING,
+  SETTLING,
   TRADING,
   POST_TRADING,
   END_OF_DAY,
