@@ -9,9 +9,6 @@ import com.osa.binance.api.client.domain.event.AggTradeEvent;
 import com.osa.binance.api.client.domain.event.BookTickerEvent;
 import com.osa.binance.api.client.domain.event.CandlestickEvent;
 import com.osa.binance.api.client.domain.event.DepthEvent;
-import com.osa.binance.api.client.domain.event.MarkPriceEvent;
-import com.osa.binance.api.client.domain.event.SymbolBookTickerEvent;
-import com.osa.binance.api.client.domain.event.SymbolTickerEvent;
 import com.osa.binance.api.client.domain.event.TickerEvent;
 import com.osa.binance.api.client.domain.event.UserDataUpdateEvent;
 import okhttp3.OkHttpClient;
@@ -93,24 +90,6 @@ public class BinanceApiWebSocketClientImpl implements BinanceApiWebSocketClient,
     public Closeable onAllBookTickersEvent(BinanceApiCallback<BookTickerEvent> callback) {
         final String channel = "!bookTicker";
         return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, BookTickerEvent.class));
-    }
-
-    @Override
-    public Closeable onMarkPriceEvent(String symbol, BinanceApiCallback<MarkPriceEvent> callback) {
-        final String channel = symbol + "@markPrice";
-        return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, MarkPriceEvent.class));
-    }
-
-    @Override
-    public Closeable onSymbolTickerEvent(String symbol, BinanceApiCallback<SymbolTickerEvent> callback) {
-        final String channel = symbol + "@bookTicker";
-        return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, SymbolTickerEvent.class));
-    }
-
-    @Override
-    public Closeable onSymbolBookTickerEvent(String symbol, BinanceApiCallback<SymbolBookTickerEvent> callback) {
-        final String channel = symbol + "@ticker";
-        return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, SymbolBookTickerEvent.class));
     }
 
     /**

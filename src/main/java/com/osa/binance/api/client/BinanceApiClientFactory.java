@@ -9,6 +9,7 @@ import com.osa.binance.api.client.impl.BinanceApiRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiSwapRestClientImpl;
 import com.osa.binance.api.client.impl.BinanceApiWebSocketClientImpl;
 import com.osa.binance.api.client.impl.BinanceFuturesApiRestClientImpl;
+import com.osa.binance.api.client.impl.BinanceFuturesWebSocketClientImpl;
 
 import static com.osa.binance.api.client.impl.BinanceApiServiceProducer.getSharedClient;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -78,6 +79,10 @@ public class BinanceApiClientFactory {
    */
   public BinanceApiWebSocketClient newWebSocketClient() {
     return new BinanceApiWebSocketClientImpl(getSharedClient(), binanceConfig);
+  }
+
+  public BinanceFuturesWebSocketClient newFuturesWebSocketClient() {
+    return new BinanceFuturesWebSocketClientImpl(getSharedClient(), binanceConfig);
   }
 
   /**

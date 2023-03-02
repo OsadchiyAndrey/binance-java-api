@@ -13,8 +13,10 @@ import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.account.request.ChangeLeverageRequest;
 import com.osa.binance.api.client.domain.account.request.PositionRiskRequest;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import lombok.extern.log4j.Log4j2;
 import retrofit2.Call;
 
+@Log4j2
 public class BinanceFuturesApiRestClientImpl implements BinanceFuturesApiRestClient {
 
   private final BinanceApiFuturesService binanceApiService;
@@ -42,15 +44,19 @@ public class BinanceFuturesApiRestClientImpl implements BinanceFuturesApiRestCli
           order.getStopPrice(), order.getNewOrderRespType(), order.getRecvWindow(),
           order.getTimestamp());
     }
-    return BinanceApiServiceProducer.executeSync(call);
+    NewOrderResponse newOrderResponse = BinanceApiServiceProducer.executeSync(call);
+    log.info("Order has been placed " + newOrderResponse);
+    return newOrderResponse;
   }
 
   @Override
   public CancelOrderResponse cancelOrder(CancelOrderRequest cancelOrderRequest) {
-    return BinanceApiServiceProducer.executeSync(
+    CancelOrderResponse cancelOrderResponse = BinanceApiServiceProducer.executeSync(
         binanceApiService.cancelOrder(cancelOrderRequest.getSymbol(), cancelOrderRequest.getOrderId(),
             cancelOrderRequest.getOrigClientOrderId(), cancelOrderRequest.getNewClientOrderId(),
             cancelOrderRequest.getRecvWindow(), cancelOrderRequest.getTimestamp()));
+    log.info("Order has been canceled " + cancelOrderResponse);
+    return cancelOrderResponse;
   }
 
   @Override

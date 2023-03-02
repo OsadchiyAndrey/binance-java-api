@@ -1,5 +1,7 @@
 package com.osa.binance.api.client.domain.account;
 
+import lombok.ToString;
+
 public class PositionRisk {
 
   private String entryPrice;
