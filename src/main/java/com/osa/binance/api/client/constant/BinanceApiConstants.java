@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class BinanceApiConstants {
 
   public static final String API_URL = "https://fapi.binance.com/";
-  public static final String WEBSOCKET_URL = "wss://fstream.binance.com/ws/";
+  public static final String WEBSOCKET_URL = "wss://fstream.binance.com/ws";
   public static final String TESTNET_API_URL = "https://testnet.binancefuture.com/";
   public static final String TESTNET_WEBSOCKET_URL = "wss://stream.binancefuture.com/ws";
   public static final String BINANCE_ASSETS_URL = "https://binance.com/assetWithdraw/getAllAsset.html/";
