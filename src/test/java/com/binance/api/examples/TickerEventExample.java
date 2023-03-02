@@ -1,17 +1,16 @@
 package com.binance.api.examples;
 
 import com.osa.binance.api.client.BinanceApiClientFactory;
-import com.osa.binance.api.client.BinanceApiWebSocketClient;
+import com.osa.binance.api.client.BinanceFuturesWebSocketClient;
 
 public class TickerEventExample {
 
   public static void main(String[] args) {
     BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(true);
-    BinanceApiWebSocketClient client = factory.newWebSocketClient();
+    BinanceFuturesWebSocketClient binanceFuturesWebSocketClient = factory.newFuturesWebSocketClient();
 
-    client.onBookTickerEvent("btcusdt", event -> {
+    binanceFuturesWebSocketClient.onSymbolBookTickerEvent("btcusdt", event -> {
       System.out.println(event);
-
     });
   }
 }

@@ -34,13 +34,13 @@ public class BinanceFuturesWebSocketClientImpl implements BinanceFuturesWebSocke
 
   @Override
   public Closeable onSymbolTickerEvent(String symbol, BinanceApiCallback<SymbolTickerEvent> callback) {
-    final String channel = symbol + "@bookTicker";
+    final String channel = symbol + "@ticker";
     return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, SymbolTickerEvent.class));
   }
 
   @Override
   public Closeable onSymbolBookTickerEvent(String symbol, BinanceApiCallback<SymbolBookTickerEvent> callback) {
-    final String channel = symbol + "@ticker";
+    final String channel = symbol + "@bookTicker";
     return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, SymbolBookTickerEvent.class));
   }
 
