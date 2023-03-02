@@ -24,6 +24,7 @@ public class SymbolInfo {
   private String quoteAsset;
 
   private Integer quotePrecision;
+  private String quantityPrecision;
 
   private List<OrderType> orderTypes;
 
@@ -143,6 +144,14 @@ public class SymbolInfo {
     this.filters = filters;
   }
 
+  public String getQuantityPrecision() {
+    return quantityPrecision;
+  }
+
+  public void setQuantityPrecision(String quantityPrecision) {
+    this.quantityPrecision = quantityPrecision;
+  }
+
   /**
    * @param filterType filter type to filter for.
    * @return symbol filter information for the provided filter type.
@@ -164,6 +173,7 @@ public class SymbolInfo {
         .append("quoteAsset", quoteAsset)
         .append("quotePrecision", quotePrecision)
         .append("orderTypes", orderTypes)
+        .append("quantityPrecision", quantityPrecision)
         .append("icebergAllowed", icebergAllowed)
         .append("filters", filters)
         .toString();
