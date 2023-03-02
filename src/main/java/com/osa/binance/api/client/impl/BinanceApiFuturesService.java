@@ -31,7 +31,7 @@ public interface BinanceApiFuturesService {
                                   @Query("timeInForce") TimeInForce timeInForce, @Query("quantity") String quantity, @Query("price") String price,
                                   @Query("newClientOrderId") String newClientOrderId, @Query("stopPrice") String stopPrice,
                                   @Query("newOrderRespType") NewOrderResponseType newOrderRespType,
-                                  @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
+                                  @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp, @Query("closePosition") boolean closePosition);
 
   @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
   @POST("/fapi/v1/order")

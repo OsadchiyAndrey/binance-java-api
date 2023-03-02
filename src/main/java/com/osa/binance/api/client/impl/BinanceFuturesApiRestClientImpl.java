@@ -37,7 +37,7 @@ public class BinanceFuturesApiRestClientImpl implements BinanceFuturesApiRestCli
       call = binanceApiService.newOrder(order.getSymbol(), order.getSide(), order.getType(),
           order.getTimeInForce(), order.getQuantity(), order.getPrice(), order.getNewClientOrderId(),
           order.getStopPrice(),  order.getNewOrderRespType(), order.getRecvWindow(),
-          order.getTimestamp());
+          order.getTimestamp(), order.isClosePosition());
     } else {
       call = binanceApiService.newOrderQuoteQty(order.getSymbol(), order.getSide(), order.getType(),
           order.getTimeInForce(), order.getQuoteOrderQty(), order.getPrice(), order.getNewClientOrderId(),
