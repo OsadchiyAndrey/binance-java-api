@@ -24,7 +24,7 @@ public class SymbolInfo {
   private String quoteAsset;
 
   private Integer quotePrecision;
-  private String quantityPrecision;
+  private Integer quantityPrecision;
 
   private List<OrderType> orderTypes;
 
@@ -144,11 +144,11 @@ public class SymbolInfo {
     this.filters = filters;
   }
 
-  public String getQuantityPrecision() {
+  public Integer getQuantityPrecision() {
     return quantityPrecision;
   }
 
-  public void setQuantityPrecision(String quantityPrecision) {
+  public void setQuantityPrecision(Integer quantityPrecision) {
     this.quantityPrecision = quantityPrecision;
   }
 
