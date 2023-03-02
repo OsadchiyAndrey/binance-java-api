@@ -92,7 +92,7 @@ public class NewOrder {
     this.type = type;
     this.timeInForce = timeInForce;
     this.quantity = quantity;
-    this.newOrderRespType = NewOrderResponseType.RESULT;
+    this.newOrderRespType = NewOrderResponseType.FULL;
     this.timestamp = System.currentTimeMillis();
     this.recvWindow = BinanceApiConstants.DEFAULT_RECEIVING_WINDOW;
   }
