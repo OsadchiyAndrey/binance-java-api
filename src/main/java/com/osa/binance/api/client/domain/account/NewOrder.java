@@ -82,6 +82,7 @@ public class NewOrder {
    * Order timestamp.
    */
   private long timestamp;
+  private boolean closePosition;
 
   /**
    * Creates a new order with all required parameters.
@@ -228,6 +229,16 @@ public class NewOrder {
 
   public NewOrder timestamp(long timestamp) {
     this.timestamp = timestamp;
+    return this;
+  }
+
+  public boolean isClosePosition() {
+    return closePosition;
+  }
+
+  public NewOrder closePosition(boolean closePosition) {
+    this.closePosition = closePosition;
+    this.quantity = null;
     return this;
   }
 
