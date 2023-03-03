@@ -60,6 +60,5 @@ public interface BinanceApiFuturesService {
                                                @Query("timestamp") Long timestamp);
 
   @GET("/fapi/v1/klines")
-  Call<List<Candlestick>> getCandlestickBars(@Query("symbol") String symbol, @Query("interval") String interval, @Query("limit") Integer limit,
-                                             @Query("startTime") Long startTime, @Query("endTime") Long endTime);
+  Call<List<Candlestick>> getCandlestickBars(@Query("symbol") String symbol, @Query("interval") String interval, @Query("limit") Integer limit);
 }

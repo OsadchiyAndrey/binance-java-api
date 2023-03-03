@@ -26,5 +26,5 @@ public interface BinanceFuturesApiRestClient {
 
   LeverageResponse changeInitialLeverage(ChangeLeverageRequest changeLeverageRequest);
 
-  List<Candlestick> getCandlestickBars(String symbol, CandlestickInterval interval, Integer limit, Long startTime, Long endTime);
+  List<Candlestick> getCandlestickBars(String symbol, CandlestickInterval interval, Integer limit);
 }
