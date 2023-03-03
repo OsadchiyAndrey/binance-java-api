@@ -12,6 +12,7 @@ import com.osa.binance.api.client.domain.account.NewOrderResponseType;
 import com.osa.binance.api.client.domain.account.PositionRisk;
 import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.market.Candlestick;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -57,4 +58,8 @@ public interface BinanceApiFuturesService {
   Call<LeverageResponse> changeInitialLeverage(@Query("leverage") Integer leverage,
                                                @Query("symbol") String symbol, @Query("recvWindow") Long recvWindow,
                                                @Query("timestamp") Long timestamp);
+
+  @GET("/fapi/v1/klines")
+  Call<List<Candlestick>> getCandlestickBars(@Query("symbol") String symbol, @Query("interval") String interval, @Query("limit") Integer limit,
+                                             @Query("startTime") Long startTime, @Query("endTime") Long endTime);
 }

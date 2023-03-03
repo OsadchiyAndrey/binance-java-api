@@ -11,6 +11,8 @@ import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.account.request.ChangeLeverageRequest;
 import com.osa.binance.api.client.domain.account.request.PositionRiskRequest;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.market.Candlestick;
+import com.osa.binance.api.client.domain.market.CandlestickInterval;
 
 public interface BinanceFuturesApiRestClient {
 
@@ -23,4 +25,6 @@ public interface BinanceFuturesApiRestClient {
   List<PositionRisk> getPositionRisk(PositionRiskRequest positionRiskRequest);
 
   LeverageResponse changeInitialLeverage(ChangeLeverageRequest changeLeverageRequest);
+
+  List<Candlestick> getCandlestickBars(String symbol, CandlestickInterval interval, Integer limit, Long startTime, Long endTime);
 }

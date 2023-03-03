@@ -13,6 +13,8 @@ import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.account.request.ChangeLeverageRequest;
 import com.osa.binance.api.client.domain.account.request.PositionRiskRequest;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.market.Candlestick;
+import com.osa.binance.api.client.domain.market.CandlestickInterval;
 import lombok.extern.log4j.Log4j2;
 import retrofit2.Call;
 
@@ -72,5 +74,12 @@ public class BinanceFuturesApiRestClientImpl implements BinanceFuturesApiRestCli
         binanceApiService.changeInitialLeverage(changeLeverageRequest.getLeverage(), changeLeverageRequest.getSymbol(),
             changeLeverageRequest.getRecvWindow(),
             changeLeverageRequest.getTimestamp()));
+  }
+
+  @Override
+  public List<Candlestick> getCandlestickBars(String symbol, CandlestickInterval interval, Integer limit,
+                                              Long startTime, Long endTime) {
+    return BinanceApiServiceProducer.executeSync(
+        binanceApiService.getCandlestickBars(symbol, interval.getIntervalId(), limit, startTime, endTime));
   }
 }
