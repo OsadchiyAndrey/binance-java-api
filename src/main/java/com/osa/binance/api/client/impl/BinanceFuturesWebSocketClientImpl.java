@@ -6,10 +6,11 @@ import java.io.IOException;
 import com.osa.binance.api.client.BinanceApiCallback;
 import com.osa.binance.api.client.BinanceFuturesWebSocketClient;
 import com.osa.binance.api.client.config.BinanceConfig;
-import com.osa.binance.api.client.domain.event.BookTickerEvent;
+import com.osa.binance.api.client.domain.event.CandlestickEvent;
 import com.osa.binance.api.client.domain.event.MarkPriceEvent;
 import com.osa.binance.api.client.domain.event.SymbolBookTickerEvent;
 import com.osa.binance.api.client.domain.event.SymbolTickerEvent;
+import com.osa.binance.api.client.domain.market.CandlestickInterval;
 import lombok.extern.log4j.Log4j2;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -42,6 +43,12 @@ public class BinanceFuturesWebSocketClientImpl implements BinanceFuturesWebSocke
   public Closeable onSymbolBookTickerEvent(String symbol, BinanceApiCallback<SymbolBookTickerEvent> callback) {
     final String channel = symbol + "@bookTicker";
     return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, SymbolBookTickerEvent.class));
+  }
+
+  @Override
+  public Closeable onCandlestickEvent(String symbol, CandlestickInterval interval, BinanceApiCallback<CandlestickEvent> callback) {
+    final String channel = symbol + "@kline_" + interval.getIntervalId();
+    return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, CandlestickEvent.class));
   }
 
   @Override
