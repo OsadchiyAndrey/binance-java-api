@@ -12,6 +12,7 @@ import com.osa.binance.api.client.domain.account.request.CancelOrderRequest;
 import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.account.request.ChangeLeverageRequest;
 import com.osa.binance.api.client.domain.account.request.PositionRiskRequest;
+import com.osa.binance.api.client.domain.general.BookTickerResponse;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
 import com.osa.binance.api.client.domain.market.Candlestick;
 import com.osa.binance.api.client.domain.market.CandlestickInterval;
@@ -80,5 +81,10 @@ public class BinanceFuturesApiRestClientImpl implements BinanceFuturesApiRestCli
   public List<Candlestick> getCandlestickBars(String symbol, CandlestickInterval interval, Integer limit) {
     return BinanceApiServiceProducer.executeSync(
         binanceApiService.getCandlestickBars(symbol, interval.getIntervalId(), limit));
+  }
+
+  @Override
+  public BookTickerResponse getBookTicker(String symbol) {
+    return BinanceApiServiceProducer.executeSync(binanceApiService.getBookTicker(symbol));
   }
 }

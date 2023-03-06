@@ -12,6 +12,7 @@ import com.osa.binance.api.client.domain.account.NewOrderResponseType;
 import com.osa.binance.api.client.domain.account.PositionRisk;
 import com.osa.binance.api.client.domain.account.request.CancelOrderResponse;
 import com.osa.binance.api.client.domain.general.ExchangeInfo;
+import com.osa.binance.api.client.domain.general.BookTickerResponse;
 import com.osa.binance.api.client.domain.market.Candlestick;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
@@ -61,4 +62,7 @@ public interface BinanceApiFuturesService {
 
   @GET("/fapi/v1/klines")
   Call<List<Candlestick>> getCandlestickBars(@Query("symbol") String symbol, @Query("interval") String interval, @Query("limit") Integer limit);
+
+  @GET("/fapi/v1/ticker/bookTicker")
+  Call<BookTickerResponse> getBookTicker(@Query("symbol") String symbol);
 }
