@@ -83,6 +83,7 @@ public class NewOrder {
    */
   private long timestamp;
   private boolean closePosition;
+  private boolean reduceOnly;
 
   /**
    * Creates a new order with all required parameters.
@@ -239,6 +240,15 @@ public class NewOrder {
   public NewOrder closePosition(boolean closePosition) {
     this.closePosition = closePosition;
     this.quantity = null;
+    return this;
+  }
+
+  public boolean isReduceOnly() {
+    return reduceOnly;
+  }
+
+  public NewOrder setReduceOnly(boolean reduceOnly) {
+    this.reduceOnly = reduceOnly;
     return this;
   }
 
